@@ -16,7 +16,7 @@ public class ScannerClass {
 
             System.out.println("La suma de ambos numeros es: " + (num1 + num2));
         } catch (InputMismatchException ex) {
-            System.out.println("Error al obtener el numero. Motivo: " + ex.toString());
+            System.out.println("Error al obtener el numero. Motivo: " + ex);
             System.exit(0);
         }
     }
