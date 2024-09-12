@@ -6,9 +6,9 @@ import java.io.*;
 public class InputStreamClass {
     public static void main(String[] args) throws FileNotFoundException {
 
-        JFileChooser fileChooser = new JFileChooser("");
-        fileChooser.showOpenDialog(null);
-        String filePathSelection = fileChooser.getSelectedFile().getAbsolutePath();
+        JFileChooser fileChooserObject = new JFileChooser("");
+        fileChooserObject.showOpenDialog(null);
+        String filePathSelection = fileChooserObject.getSelectedFile().getAbsolutePath();
         try(InputStream myStream = new FileInputStream(filePathSelection)){
 
             /*PRINT ALL THE DATA in BYTES
