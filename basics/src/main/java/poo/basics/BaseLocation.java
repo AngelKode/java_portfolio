@@ -7,11 +7,9 @@ public class BaseLocation {
         if(! (isLatitudeValid(_latitude) && isLongitudeValid(_longitude) )){
             throw new Error("Can't initialize BaseLocation object due to bad range in one or two parameters.");
         }
-
         this.latitude = _latitude;
         this.longitude = _longitude;
     }
-
     public double getLatitude() {
         return this.latitude;
     }
