@@ -7,7 +7,7 @@ public class main {
         myLocation.setLatitude(-180.0);
         System.out.println(myLocation.getLatitude());
         */
-        FizzBuzz myFizzBuzz = new FizzBuzz(20);
+        FizzBuzz myFizzBuzz = new FizzBuzz(0);
         myFizzBuzz.calculate();
     }
 }
