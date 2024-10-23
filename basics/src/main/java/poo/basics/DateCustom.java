@@ -24,5 +24,26 @@ public class DateCustom {
 
         System.out.println(myDate);
 
+        //Compare different dates
+        myCalendar.set(Calendar.MONTH, Calendar.FEBRUARY);
+        myCalendar.set(Calendar.DATE,1);
+        Date dateOne = myCalendar.getTime();
+
+        myCalendar.set(Calendar.MONTH, Calendar.JANUARY);
+        myCalendar.set(Calendar.DATE, 2);
+        Date dateTwo = myCalendar.getTime();
+
+        if(dateTwo.compareTo(dateOne) < 0){
+            System.out.println(formattedDate.format(dateTwo) + " is not sooner than " + formattedDate.format(dateOne));
+            System.exit(1);
+        }
+
+        if(dateTwo.compareTo(dateOne) > 0){
+            System.out.println(formattedDate.format(dateTwo) + " is sooner than " + formattedDate.format(dateOne));
+            System.exit(1);
+        }
+
+        System.out.println("Both dates are equal");
+
     }
 }
