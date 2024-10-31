@@ -1,13 +1,9 @@
 package poo.basics;
 
+import advanced.ThreadClass;
+
 public class main {
-    public static void main(String[] args) {
-        /*
-        BaseLocation myLocation = new BaseLocation(12.34521,-190);
-        myLocation.setLatitude(-180.0);
-        System.out.println(myLocation.getLatitude());
-        */
-        FizzBuzz myFizzBuzz = new FizzBuzz(0);
-        myFizzBuzz.calculate();
+    public static void main(String[] args) throws InterruptedException {
+
     }
 }
