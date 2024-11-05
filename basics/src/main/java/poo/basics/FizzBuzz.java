@@ -5,7 +5,6 @@ public class FizzBuzz {
     FizzBuzz(int _range){
         this.range = _range;
     }
-
     public void calculate(){
         if(this.range == 0){
             System.out.println("Can't calculate fizzbuzz. Set a valid range");

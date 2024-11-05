@@ -8,7 +8,6 @@ public class MutableStrings {
 
         //It can mutate but it's not thread safe
         StringBuffer myBuffer = new StringBuffer("Master in Java");
-
         initTime = System.currentTimeMillis();
         myBuffer.append(". That's it".repeat(10_000_000));
         finalTime = System.currentTimeMillis();
