@@ -1,18 +1,20 @@
 package advanced;
 
+import java.sql.SQLOutput;
+
 public class ThreadClass{
 
     public static void main(String[] args) {
         //BLOCKED
 
         //Instance new thread
-        Thread myThread = new Thread(ThreadClass::threadProcess);
+        //Thread myThread = new Thread(ThreadClass::threadProcess);
 
         //New thread to compare them
-        Thread myThreadTwo = new Thread(ThreadClass::threadProcess);
+        //Thread myThreadTwo = new Thread(ThreadClass::threadProcess);
 
-        myThread.start();
-        myThreadTwo.start();
+        //myThread.start();
+        //myThreadTwo.start();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -20,7 +22,7 @@ public class ThreadClass{
         }
 
         //State BLOCKED for infinite loop of the first thread
-        System.out.println(myThreadTwo.getState());
+        //System.out.println(myThreadTwo.getState());
 
 
         //WATING
@@ -42,9 +44,28 @@ public class ThreadClass{
             throw new RuntimeException(e);
         }
 
+        //RUNNABLE
+        Thread runnableThread = new Thread(ThreadClass::threadProcess);
+        runnableThread.start();
+        System.out.println(runnableThread.getState());
+
+        //TERMINATED
+        try {
+            runnableThread.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } finally {
+            System.out.println(runnableThread.getState());
+            System.out.println(runnableThread.isAlive());
+        }
+
     }
 
-    public static synchronized void threadProcess(){
-        while (true){}
+    public static synchronized void threadProcess() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
