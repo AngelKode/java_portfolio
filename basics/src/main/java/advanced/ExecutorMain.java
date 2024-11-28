@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.concurrent.*;
 
 public class ExecutorMain {
-    public static void main(String[] args) throws ExecutionException, InterruptedException, TimeoutException {
+    public static void main(String[] args) {
 
         Future<ArrayList<String>> queryResult;
         Future<ArrayList<String>> queryResultSecond;
         Future<ArrayList<String>> queryResultNew;
+
         try (ExecutorService threadExecutor = Executors.newFixedThreadPool(2)) {
 
             Callable<ArrayList<String>> callableTask = () -> {
@@ -68,6 +69,8 @@ public class ExecutorMain {
             for(String client : queryResultNew.get(5,TimeUnit.SECONDS)){
                 System.out.print(client + ",");
             }
+        }catch(InterruptedException | ExecutionException | TimeoutException e){
+            Thread.currentThread().interrupt();
         }
     }
 }
